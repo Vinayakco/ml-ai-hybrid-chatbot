@@ -30,6 +30,7 @@ def get_ai_response(user_input):
         response = client.chat.completions.create(
             model="openrouter/free",
             messages=[
+                {"role": "system", "content": "Your name is VIMI AI. You are a helpful assistant. If anyone asks your name or who you are, always say you are VIMI AI. Never mention Nemotron, NVIDIA, Llama, GPT, Mistral, or any other underlying model name."},
                 {"role": "user", "content": user_input}
             ]
         )
